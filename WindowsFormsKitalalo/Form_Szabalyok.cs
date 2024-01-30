@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,6 @@ namespace WindowsFormsKitalalo
             //Játék megnyitása, szabályzat bezárása
             Program.form_jatek.Show();
             this.Hide();
-
-            //Lehetőségek beolvasása
-
         }
     }
 }

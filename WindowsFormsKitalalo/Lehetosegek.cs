@@ -16,11 +16,12 @@ namespace WindowsFormsKitalalo
         {
             string[] szavak = Beolvas.Split(',');
             LehetsegesSzavak = szavak[0];
+            LehetsegesSzavak = Beolvas.Replace("\"", "");
         }
 
         public override string ToString()
         {
-            return LehetsegesSzavak1;
+            return LehetsegesSzavak;
         }
     }
 }

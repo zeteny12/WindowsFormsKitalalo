@@ -95,10 +95,10 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label6.Location = new System.Drawing.Point(166, 215);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(571, 58);
+            this.label6.Size = new System.Drawing.Size(518, 58);
             this.label6.TabIndex = 1;
-            this.label6.Text = "4. Ha egy betűt eltalálsz, álljon bármelyik helyen, \r\nmeg fog jelenni, a többi he" +
-    "lyet \'.\' (pont) tölt ki";
+            this.label6.Text = "4. Ha egy betűt eltalálsz, megjelenik, a többi \r\nkarakter aláhúzással ( _ ) lesz " +
+    "jelölve\r\n";
             // 
             // label7
             // 

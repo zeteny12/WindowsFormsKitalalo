@@ -11,6 +11,7 @@ namespace WindowsFormsKitalalo
         //Elérhetőség
         public static Form_Szabalyok form_szabalyok = null;
         public static Form_Jatek form_jatek = null;
+
         static void Main()
         {
             Application.EnableVisualStyles();
