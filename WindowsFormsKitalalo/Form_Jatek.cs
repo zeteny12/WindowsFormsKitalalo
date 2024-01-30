@@ -59,8 +59,16 @@ namespace WindowsFormsKitalalo
             if (textBox_Tipp.Text.ToLower() == "stop")
             {
                 textBox_Tipp.Text = "Játék megállítva!";
+                textBox_Tipp.ReadOnly = true;
+                textBox_Tipp.Enabled = false;
+
                 textBox_Megfejtes.Text = " - ";
+                textBox_Megfejtes.ReadOnly = true;
+                textBox_Megfejtes.Enabled = false;
+
                 textBox_TippekSzama.Text = " - ";
+                textBox_TippekSzama.ReadOnly = true;
+                textBox_TippekSzama.Enabled = false;
             }
         }
 
@@ -89,5 +97,8 @@ namespace WindowsFormsKitalalo
             }
             
         }
+
+
+        //
     }
 }
