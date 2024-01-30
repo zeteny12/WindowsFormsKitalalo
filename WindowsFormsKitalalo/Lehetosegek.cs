@@ -16,7 +16,7 @@ namespace WindowsFormsKitalalo
         {
             string[] szavak = Beolvas.Split(',');
             LehetsegesSzavak = szavak[0];
-            LehetsegesSzavak = Beolvas.Replace("\"", "");
+            LehetsegesSzavak = Beolvas.Replace("\"", "").Replace(",", "");
         }
 
         public override string ToString()

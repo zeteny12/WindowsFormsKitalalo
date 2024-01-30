@@ -19,7 +19,11 @@ namespace WindowsFormsKitalalo
 
             //Lehetőségek beolvasása
             LehetosegBetoltes();
+            
+            //Random szó kiválasztása
+            RandomSzo();
         }
+
 
         //Lehetőségek beolvasása
         private void LehetosegBetoltes()
@@ -42,6 +46,48 @@ namespace WindowsFormsKitalalo
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+
+        //Tipp
+        private void textBox_Tipp_TextChanged(object sender, EventArgs e)
+        {
+            TippStop();
+        }
+        private void TippStop()
+        {
+            if (textBox_Tipp.Text.ToLower() == "stop")
+            {
+                textBox_Tipp.Text = "Játék megállítva!";
+                textBox_Megfejtes.Text = " - ";
+                textBox_TippekSzama.Text = " - ";
+            }
+        }
+
+
+        //Kilépés gomb
+        private void button_Kilepes_Click(object sender, EventArgs e)
+        {
+            Kilepes();
+        }
+        private void Kilepes()
+        {
+            this.Close();
+        }
+
+
+        //Random szó kiválasztása
+        private void RandomSzo()
+        {
+            if (listBox_Lehetosegek.Items.Count > 0)
+            {
+                Random r = new Random();
+                int randomIndex = r.Next(listBox_Lehetosegek.Items.Count);
+
+                Lehetosegek kivalasztottSzo = (Lehetosegek)listBox_Lehetosegek.Items[randomIndex];
+                //textBox_Tipp.Text = kivalasztottSzo.ToString();   ||Teszt céljából||
+            }
+            
         }
     }
 }

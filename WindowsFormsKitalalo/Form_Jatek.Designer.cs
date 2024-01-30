@@ -60,6 +60,7 @@
             this.textBox_Tipp.Name = "textBox_Tipp";
             this.textBox_Tipp.Size = new System.Drawing.Size(205, 38);
             this.textBox_Tipp.TabIndex = 1;
+            this.textBox_Tipp.TextChanged += new System.EventHandler(this.textBox_Tipp_TextChanged);
             // 
             // label2
             // 
@@ -136,6 +137,7 @@
             this.button_Kilepes.TabIndex = 3;
             this.button_Kilepes.Text = "Kilépés";
             this.button_Kilepes.UseVisualStyleBackColor = true;
+            this.button_Kilepes.Click += new System.EventHandler(this.button_Kilepes_Click);
             // 
             // button_UjJatek
             // 
