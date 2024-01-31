@@ -41,6 +41,7 @@
             this.button_Kilepes = new System.Windows.Forms.Button();
             this.button_UjJatek = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button_Tippel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(68, 185);
+            this.label2.Location = new System.Drawing.Point(68, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 36);
             this.label2.TabIndex = 0;
@@ -76,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(10, 263);
+            this.label3.Location = new System.Drawing.Point(10, 293);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(219, 36);
             this.label3.TabIndex = 0;
@@ -86,7 +87,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(10, 263);
+            this.label4.Location = new System.Drawing.Point(10, 293);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 36);
             this.label4.TabIndex = 0;
@@ -95,7 +96,7 @@
             // textBox_Megfejtes
             // 
             this.textBox_Megfejtes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Megfejtes.Location = new System.Drawing.Point(235, 185);
+            this.textBox_Megfejtes.Location = new System.Drawing.Point(235, 215);
             this.textBox_Megfejtes.Name = "textBox_Megfejtes";
             this.textBox_Megfejtes.Size = new System.Drawing.Size(205, 38);
             this.textBox_Megfejtes.TabIndex = 1;
@@ -103,7 +104,7 @@
             // textBox_TippekSzama
             // 
             this.textBox_TippekSzama.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_TippekSzama.Location = new System.Drawing.Point(235, 263);
+            this.textBox_TippekSzama.Location = new System.Drawing.Point(235, 293);
             this.textBox_TippekSzama.Name = "textBox_TippekSzama";
             this.textBox_TippekSzama.Size = new System.Drawing.Size(205, 38);
             this.textBox_TippekSzama.TabIndex = 1;
@@ -131,7 +132,7 @@
             // button_Kilepes
             // 
             this.button_Kilepes.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_Kilepes.Location = new System.Drawing.Point(235, 343);
+            this.button_Kilepes.Location = new System.Drawing.Point(235, 373);
             this.button_Kilepes.Name = "button_Kilepes";
             this.button_Kilepes.Size = new System.Drawing.Size(153, 49);
             this.button_Kilepes.TabIndex = 3;
@@ -142,7 +143,7 @@
             // button_UjJatek
             // 
             this.button_UjJatek.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_UjJatek.Location = new System.Drawing.Point(74, 343);
+            this.button_UjJatek.Location = new System.Drawing.Point(74, 373);
             this.button_UjJatek.Name = "button_UjJatek";
             this.button_UjJatek.Size = new System.Drawing.Size(153, 49);
             this.button_UjJatek.TabIndex = 3;
@@ -159,11 +160,23 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Találd ki a szót!";
             // 
+            // button_Tippel
+            // 
+            this.button_Tippel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Tippel.Location = new System.Drawing.Point(364, 148);
+            this.button_Tippel.Name = "button_Tippel";
+            this.button_Tippel.Size = new System.Drawing.Size(76, 32);
+            this.button_Tippel.TabIndex = 5;
+            this.button_Tippel.Text = "Tipp";
+            this.button_Tippel.UseVisualStyleBackColor = true;
+            this.button_Tippel.Click += new System.EventHandler(this.button_Tippel_Click);
+            // 
             // Form_Jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 478);
+            this.Controls.Add(this.button_Tippel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button_UjJatek);
             this.Controls.Add(this.button_Kilepes);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.Button button_Kilepes;
         private System.Windows.Forms.Button button_UjJatek;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button_Tippel;
     }
 }

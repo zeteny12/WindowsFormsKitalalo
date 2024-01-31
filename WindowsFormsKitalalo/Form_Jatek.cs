@@ -13,6 +13,10 @@ namespace WindowsFormsKitalalo
 {
     public partial class Form_Jatek : Form
     {
+        private Lehetosegek kivalasztottSzo;
+        private char[] megfejtettBetuk;
+        private int tippekSzama = 0;
+
         public Form_Jatek()
         {
             InitializeComponent();
@@ -23,6 +27,7 @@ namespace WindowsFormsKitalalo
             //Random szó kiválasztása
             RandomSzo();
         }
+
 
 
         //Lehetőségek beolvasása
@@ -49,7 +54,8 @@ namespace WindowsFormsKitalalo
         }
 
 
-        //Tipp
+
+        //Tipp stop
         private void textBox_Tipp_TextChanged(object sender, EventArgs e)
         {
             TippStop();
@@ -58,7 +64,7 @@ namespace WindowsFormsKitalalo
         {
             if (textBox_Tipp.Text.ToLower() == "stop")
             {
-                textBox_Tipp.Text = "Játék megállítva!";
+                textBox_Tipp.Text = "A játék véget ért!";
                 textBox_Tipp.ReadOnly = true;
                 textBox_Tipp.Enabled = false;
 
@@ -69,8 +75,22 @@ namespace WindowsFormsKitalalo
                 textBox_TippekSzama.Text = " - ";
                 textBox_TippekSzama.ReadOnly = true;
                 textBox_TippekSzama.Enabled = false;
+
+                button_Tippel.Enabled = false;
+
+                KivalasztottSzoKijelolese();
             }
         }
+        //Kiválasztott szó kijelölése
+        private void KivalasztottSzoKijelolese()
+        {
+            int index = listBox_Lehetosegek.Items.IndexOf(kivalasztottSzo);
+            if (index != -1)
+            {
+                listBox_Lehetosegek.SetSelected(index, true);
+            }
+        }
+
 
 
         //Kilépés gomb
@@ -84,6 +104,7 @@ namespace WindowsFormsKitalalo
         }
 
 
+
         //Random szó kiválasztása
         private void RandomSzo()
         {
@@ -92,13 +113,52 @@ namespace WindowsFormsKitalalo
                 Random r = new Random();
                 int randomIndex = r.Next(listBox_Lehetosegek.Items.Count);
 
-                Lehetosegek kivalasztottSzo = (Lehetosegek)listBox_Lehetosegek.Items[randomIndex];
+                kivalasztottSzo = (Lehetosegek)listBox_Lehetosegek.Items[randomIndex];
+                megfejtettBetuk = new char[kivalasztottSzo.LehetsegesSzavak1.Length];
+
+                for (int i = 0; i < megfejtettBetuk.Length; i++)
+                {
+                    megfejtettBetuk[i] = '_';
+                }
+
                 //textBox_Tipp.Text = kivalasztottSzo.ToString();   ||Teszt céljából||
             }
-            
         }
 
 
+
         //
+        private void button_Tippel_Click(object sender, EventArgs e)
+        {
+            RandomSzo();
+
+            string tipp = textBox_Tipp.Text.ToLower();
+
+            if (tipp.Length != kivalasztottSzo.LehetsegesSzavak1.Length)
+            {
+                MessageBox.Show($"A tippnek pontosan {kivalasztottSzo.LehetsegesSzavak1.Length} karakterből kell állnia!");
+                return;
+            }
+
+            string eredmeny = kivalasztottSzo.KitalalasEredmeny(tipp);
+            for (int i = 0; i < kivalasztottSzo.LehetsegesSzavak1.Length; i++)
+            {
+                if (eredmeny[i] != '_')
+                {
+                    megfejtettBetuk[i] = eredmeny[i];
+                }
+            }
+
+            tippekSzama++;
+            textBox_Megfejtes.Text = new string(megfejtettBetuk);
+            textBox_TippekSzama.Text = tippekSzama.ToString();
+
+            if (kivalasztottSzo.Megfejtve(new string(megfejtettBetuk)))
+            {
+                MessageBox.Show("Gratulálok, megfejtetted!");
+                // Itt még további teendőket is végezhetsz, például új játék indítása stb.
+            }
+        }
+
     }
 }
